@@ -5,5 +5,6 @@
         WaitingForAccept,
         Delivered,
         Canceled,
+        InProgress,
     }
 }

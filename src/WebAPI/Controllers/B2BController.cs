@@ -35,8 +35,10 @@ public class B2BController : Controller
     {
         var userName = HttpContext.User?.Identity?.Name;
 
+        var userId = await _context.Users.Where(x => x.Username == userName).Select(x => x.Id).FirstOrDefaultAsync();
+
         var delivery = await _context.Deliveries
-            .Where(x => x.Id == deliveryId && x.CreatedBy == userName && x.Status == Models.DeliveryStatus.WaitingForAccept)
+            .Where(x => x.Id == deliveryId && x.UserId == userId && x.Status == Models.DeliveryStatus.WaitingForAccept)
             .FirstOrDefaultAsync();
 
         if (delivery == null)

@@ -26,6 +26,9 @@ public class User
     ///     create a new `SerialNumber` GUID and store it in the DB.
     /// </summary>
     public string? SerialNumber { get; set; }
+    public string? WebHookAddress { get; set; }
+
+    public virtual ICollection<Delivery> Deliveries { get; set; }
 
     public virtual ICollection<UserRole> UserRoles { get; set; }
 

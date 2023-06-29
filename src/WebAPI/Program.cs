@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.IdentityModel.Tokens;
 using WebAPI.Extentions;
 using WebAPI.Services;
+using WebAPI.Worker;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigureLogging(builder.Logging, builder.Environment, builder.Configuration);
@@ -21,6 +22,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     services.AddCustomJwtBearer(configuration);
     services.AddCustomCors();
     services.AddCustomAntiforgery();
+    services.AddHostedService<SimulateDeliveryService>();
 }
 
 void ConfigureLogging(ILoggingBuilder logging, IHostEnvironment env, IConfiguration configuration)

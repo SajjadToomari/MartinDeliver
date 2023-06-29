@@ -15,7 +15,11 @@ public class Delivery
     public double PickupLatitude { get; set; }
     public double DestinationLongitude { get; set; }
     public double DestinationLatitude { get; set; }
+    public double CurrentLongitude { get; set; }
+    public double CurrentLatitude { get; set; }
     public DeliveryStatus Status { get; set; }
-    public string? CreatedBy { get; set; }
 
+    [ForeignKey("User")]
+    public int? UserId { get; set; }
+    public User? User { get; set; }
 }

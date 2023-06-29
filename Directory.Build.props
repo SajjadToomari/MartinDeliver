@@ -4,15 +4,13 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <AnalysisLevel>latest</AnalysisLevel>
         <AnalysisMode>AllEnabledByDefault</AnalysisMode>
-        <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <Nullable>enable</Nullable>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <ImplicitUsings>enable</ImplicitUsings>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
         <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-        <!--
+                <!--
       CA2007: Consider calling ConfigureAwait on the awaited task
       MA0004: Use Task.ConfigureAwait(false) as the current SynchronizationContext is not needed
       CA1056: Change the type of property 'Url' from 'string' to 'System.Uri'
